@@ -1,1 +1,1 @@
-#Simple golang chat appplication
+# Simple golang chat appplication
