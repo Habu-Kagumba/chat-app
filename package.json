@@ -1,0 +1,28 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "description": "Chat Application",
+  "dependencies": {
+    "stylelint": "^9.8.0",
+    "stylelint-config-standard": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Habu-Kagumba/chat-app.git"
+  },
+  "author": "Herbert Kagumba <habukagumba@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Habu-Kagumba/chat-app/issues"
+  },
+  "homepage": "https://github.com/Habu-Kagumba/chat-app#readme"
+}
