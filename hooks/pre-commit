@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# Pretty utils
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+NORMAL=$(tput sgr0)
+POWDER_BLUE=$(tput setaf 153)
+YELLOW=$(tput setaf 3)
+
+print_out() {
+  printf "\n\n${POWDER_BLUE}----------------------------------------${NORMAL}"
+  printf "\n\t ${POWDER_BLUE}$1${NORMAL}\n"
+  printf "${POWDER_BLUE}----------------------------------------${NORMAL}\n"
+}
+
+print_out "Git hooks running....."
+
+# Build
+build="$(go build -o chat)"
+if [ $? -ne 0 ]; then
+    printf "\n${RED}✗ ${YELLOW}go build${NORMAL} failed.\n"
+    exit 1
+else
+    printf "\n${GREEN}✓ ${NORMAL}chat binary created.\n"
+fi
+
+# Tests
+failed_tests="$(go test | grep "FAIL:" | awk '{print $3}')"
+if test -n "$failed_tests"; then
+    printf "\n${RED}✗ ${NORMAL} ${YELLOW}go test${NORMAL} failed."
+
+    for failed in $failed_tests; do
+        printf "\n${RED}→ "$failed"\n"
+    done
+    exit 1
+else
+    printf "\n${GREEN}✓ ${NORMAL}all tests pass.\n"
+fi
+
+exit 0
