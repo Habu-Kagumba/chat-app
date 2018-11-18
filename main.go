@@ -6,8 +6,11 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"os"
 	"path/filepath"
 	"sync"
+
+	"github.com/Habu-Kagumba/tracer"
 )
 
 type templateHandler struct {
@@ -29,6 +32,7 @@ func main() {
 	flag.Parse()
 
 	r := newRoom()
+	r.tracer = tracer.New(os.Stdout)
 	http.Handle("/", &templateHandler{filename: "chat.html"})
 	http.Handle("/room", r)
 	fs := http.FileServer(http.Dir("assets/"))
