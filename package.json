@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Chat Application",
   "dependencies": {
-    "stylelint": "^9.8.0",
+    "stylelint": "^16.6.1",
     "stylelint-config-standard": "^18.2.0"
   },
   "devDependencies": {
